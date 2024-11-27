@@ -1,0 +1,10 @@
+/* TEAM */
+Developer: [William Nordqvist]
+Contact: niclas@bergkulla.ax
+From: Åland, Finland
+
+/* SITE */
+Last update: 2024/02
+Language: Swedish
+Doctype: HTML5
+IDE: Visual Studio Code 

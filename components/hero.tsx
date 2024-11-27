@@ -6,8 +6,9 @@ export const Hero = () => {
     <div className="relative h-screen flex items-center justify-center overflow-hidden">
       <Image
         src="/images/hero.jpg"
-        alt="Vacker vy över Bergkulla på Åland"
+        alt="Bergkulla stugby vid havet - Exklusivt långtidsboende på Åland"
         fill
+        sizes="100vw"
         style={{ objectFit: "cover" }}
         quality={100}
         priority

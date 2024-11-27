@@ -135,7 +135,7 @@ export const ImageCarousel = () => {
                 >
                   <Image
                     src={image.src}
-                    alt={image.alt}
+                    alt={`Bergkulla ${image.alt} - Moderna stugor för långtidsboende på Åland`}
                     layout="fill"
                     objectFit="cover"
                     className="rounded-lg hover:opacity-90 transition-opacity"
