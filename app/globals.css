@@ -12,6 +12,23 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .animate-scroll-x {
+    animation: scroll-x 600s linear infinite;
+  }
+
+  .pause {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll-x {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 @layer base {
@@ -77,23 +94,4 @@ body {
   body {
     @apply bg-background text-foreground;
   }
-}
-
-.thumbnail-scroll-content {
-  display: flex;
-  gap: 10px;
-  animation: scroll 60s linear infinite;
-}
-
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.thumbnail-scroll-content:hover {
-  animation-play-state: paused;
 }

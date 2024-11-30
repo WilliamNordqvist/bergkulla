@@ -7,7 +7,7 @@ export const Intro = () => {
       <WaveDivider fill="#E5E9EB" />
       <section className="bg-[#E5E9EB] py-12 md:py-24 lg:py-40">
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-          <div className="space-y-8 lg:space-y-12 px-4 md:px-8">
+          <div className="space-y-8 lg:space-y-12 px-4 md:px-8 order-first">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif tracking-tight text-[#2C3539]">
               BO PÅ BERGKULLA
             </h2>
@@ -29,7 +29,7 @@ export const Intro = () => {
               </p>
             </div>
           </div>
-          <div className="relative aspect-[4/3] md:aspect-[16/9] lg:aspect-[3/2] w-full lg:w-[45vw] ml-auto">
+          <div className="relative aspect-[4/3] md:aspect-[16/9] lg:aspect-[3/2] w-full lg:w-[45vw] ml-auto order-last">
             <Image
               src="/images/intro-1.jpg"
               alt="Bergkulla stugor i skärgårdsmiljö"
@@ -49,7 +49,7 @@ export const Intro = () => {
 
       <section className="py-12 md:py-24 lg:py-40">
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-          <div className="relative aspect-[4/3] md:aspect-[16/9] lg:aspect-[3/2] w-full lg:w-[45vw] order-1">
+          <div className="relative aspect-[4/3] md:aspect-[16/9] lg:aspect-[3/2] w-full lg:w-[45vw] order-last lg:order-first">
             <Image
               src="/images/intro-2.jpg"
               alt="Bergkullas faciliteter"
@@ -62,7 +62,7 @@ export const Intro = () => {
               className="hover:scale-[1.02] transition-transform duration-700"
             />
           </div>
-          <div className="space-y-8 lg:space-y-12 px-4 md:px-8 order-2">
+          <div className="space-y-8 lg:space-y-12 px-4 md:px-8 order-first lg:order-last">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif tracking-tight text-[#2C3539]">
               FACILITETER
             </h2>
@@ -102,7 +102,7 @@ export const Intro = () => {
 
       <section className="bg-[#E5E9EB] py-12 md:py-24 lg:py-40">
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-          <div className="space-y-8 lg:space-y-12 px-4 md:px-8">
+          <div className="space-y-8 lg:space-y-12 px-4 md:px-8 order-first">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif tracking-tight text-[#2C3539]">
               VÅR HISTORIA
             </h2>
@@ -125,7 +125,7 @@ export const Intro = () => {
               </p>
             </div>
           </div>
-          <div className="relative aspect-[4/3] md:aspect-[16/9] lg:aspect-[3/2] w-full lg:w-[45vw] ml-auto">
+          <div className="relative aspect-[4/3] md:aspect-[16/9] lg:aspect-[3/2] w-full lg:w-[45vw] ml-auto order-last">
             <Image
               src="/images/intro-3.jpg"
               alt="Historiska Bergkulla"

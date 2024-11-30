@@ -91,12 +91,12 @@ export const ImageCarousel = () => {
           ))}
         </Slider>
 
-        <div className="thumbnail-scroll-container">
-          <div className="thumbnail-scroll-content">
+        <div className="relative overflow-x-auto">
+          <div className="flex gap-2 animate-scroll-x hover:pause min-w-max px-4">
             {[...images, ...images].map((image, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 cursor-pointer"
+                className="flex-shrink-0 cursor-pointer transition-opacity hover:opacity-75"
                 onClick={() =>
                   sliderRef.current?.slickGoTo(index % images.length)
                 }
@@ -107,7 +107,6 @@ export const ImageCarousel = () => {
                     alt={image.alt}
                     layout="fill"
                     objectFit="cover"
-                    className="transition-opacity"
                   />
                 </div>
               </div>
