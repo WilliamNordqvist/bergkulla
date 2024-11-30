@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import Slider, { Settings } from "react-slick";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -35,96 +34,30 @@ export const ImageCarousel = () => {
     fetchImages();
   }, []);
 
-  const PrevArrow = (props: { onClick?: () => void }) => {
-    const { onClick } = props;
-    return (
-      <button
-        onClick={onClick}
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 bg-white/80 rounded-full p-2 shadow-lg hover:bg-white/90 transition-all hidden xl:block"
-        aria-label="Previous images"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
-    );
-  };
-
-  const NextArrow = (props: { onClick?: () => void }) => {
-    const { onClick } = props;
-    return (
-      <button
-        onClick={onClick}
-        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-10 bg-white/80 rounded-full p-2 shadow-lg hover:bg-white/90 transition-all hidden xl:block"
-        aria-label="Next images"
-      >
-        <ChevronRight className="w-6 h-6" />
-      </button>
-    );
-  };
-
   const settings: Settings = {
     lazyLoad: "ondemand",
-    pauseOnHover: true,
-    autoplay: true,
-    dots: true,
     infinite: true,
-    speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 1,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
-    dotsClass: "slick-dots slick-thumb",
-    customPaging: function (i: number) {
-      return (
-        <div className="relative aspect-square w-[100px]">
-          <Image
-            src={images[i]?.src || ""}
-            alt={images[i]?.alt || ""}
-            fill
-            className={`rounded-lg object-cover transition-all`}
-          />
-        </div>
-      );
-    },
-    responsive: [
-      {
-        breakpoint: 1280,
-        settings: {
-          slidesToShow: 3,
-          arrows: false,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          arrows: false,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          arrows: false,
-        },
-      },
-    ],
+    centerMode: true,
+    centerPadding: "0px",
+    arrows: false,
   };
 
   return (
     <>
-      <div className="mx-auto px-4 py-14 md:py-28">
+      <div className="py-20 md:py-32 lg:py-40 overflow-hidden">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-serif tracking-tight text-[#2C3539] ">
+          <h2 className="text-4xl lg:text-5xl font-serif tracking-tight text-[#2C3539]">
             UPPTÄCK BERGKULLA
           </h2>
         </div>
 
-        <div className="max-w-6xl mx-auto">
+        <div className="mx-auto">
           <Slider ref={sliderRef} {...settings}>
             {images.map((image, index) => (
-              <div key={index} className="px-2">
+              <div key={index} className="px-1">
                 <div
-                  className="relative aspect-square cursor-pointer"
+                  className="relative aspect-[4/3] cursor-pointer"
                   onClick={() => {
                     setPhotoIndex(index);
                     setIsOpen(true);
@@ -132,31 +65,37 @@ export const ImageCarousel = () => {
                 >
                   <Image
                     src={image.src}
-                    alt={`Bergkulla ${image.alt} - Moderna stugor för långtidsboende på Åland`}
+                    alt={`Bergkulla ${image.alt}`}
                     layout="fill"
                     objectFit="cover"
-                    className="rounded-lg hover:opacity-90 transition-opacity"
                   />
                 </div>
               </div>
             ))}
           </Slider>
 
-          <div className="flex justify-center gap-4 mt-6 xl:hidden">
-            <button
-              onClick={() => sliderRef.current?.slickPrev()}
-              className="bg-white/80 rounded-full p-2 shadow-lg hover:bg-white/90 transition-all"
-              aria-label="Previous images"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            <button
-              onClick={() => sliderRef.current?.slickNext()}
-              className="bg-white/80 rounded-full p-2 shadow-lg hover:bg-white/90 transition-all"
-              aria-label="Next images"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
+          <div className="thumbnail-scroll-container mt-8">
+            <div className="thumbnail-scroll-content">
+              {[...images, ...images].map((image, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 cursor-pointer"
+                  onClick={() =>
+                    sliderRef.current?.slickGoTo(index % images.length)
+                  }
+                >
+                  <div className="relative w-[350px] aspect-[2/1]">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      layout="fill"
+                      objectFit="cover"
+                      className="transition-opacity"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
