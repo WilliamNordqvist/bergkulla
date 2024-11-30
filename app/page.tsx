@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <div className="relative">
       <Hero />
-      <Intro />
       <ImageCarousel />
+      <Intro />
       <Footer />
     </div>
   );

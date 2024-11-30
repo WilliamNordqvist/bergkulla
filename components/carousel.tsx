@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { WaveDivider } from "@/components/ui/wave-divider";
 import Slider, { Settings } from "react-slick";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -113,11 +112,9 @@ export const ImageCarousel = () => {
 
   return (
     <>
-      <WaveDivider fill="#E5E9EB" />
-
-      <div className="mx-auto px-4 py-16 pb-20 bg-[#E5E9EB]">
+      <div className="mx-auto px-4 py-14 md:py-28">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-serif tracking-tight text-[#2C3539]">
+          <h2 className="text-4xl lg:text-5xl font-serif tracking-tight text-[#2C3539] ">
             UPPTÄCK BERGKULLA
           </h2>
         </div>
