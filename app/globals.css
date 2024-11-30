@@ -79,19 +79,6 @@ body {
   }
 }
 
-.thumbnail-scroll-container {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  margin: 0 -4vw;
-  padding: 0 4vw;
-}
-
-.thumbnail-scroll-container::-webkit-scrollbar {
-  display: none;
-}
-
 .thumbnail-scroll-content {
   display: flex;
   gap: 10px;

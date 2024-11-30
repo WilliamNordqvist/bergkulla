@@ -41,61 +41,77 @@ export const ImageCarousel = () => {
     centerMode: true,
     centerPadding: "0px",
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          centerMode: true,
+          centerPadding: "0px",
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+          centerPadding: "0px",
+        },
+      },
+    ],
   };
 
   return (
-    <>
-      <div className="py-20 md:py-32 lg:py-40 overflow-hidden">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-serif tracking-tight text-[#2C3539]">
-            UPPTÄCK BERGKULLA
-          </h2>
-        </div>
+    <div className="py-20 md:py-32 lg:py-40 overflow-hidden">
+      <div className="text-center mb-8 md:mb-16">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif tracking-tight text-[#2C3539]">
+          UPPTÄCK BERGKULLA
+        </h2>
+      </div>
 
-        <div className="mx-auto">
-          <Slider ref={sliderRef} {...settings}>
-            {images.map((image, index) => (
-              <div key={index} className="px-1">
-                <div
-                  className="relative aspect-[4/3] cursor-pointer"
-                  onClick={() => {
-                    setPhotoIndex(index);
-                    setIsOpen(true);
-                  }}
-                >
+      <div className="mx-auto">
+        <Slider ref={sliderRef} {...settings}>
+          {images.map((image, index) => (
+            <div key={index} className="px-1 md:px-1">
+              <div
+                className="relative aspect-[4/3] cursor-pointer"
+                onClick={() => {
+                  setPhotoIndex(index);
+                  setIsOpen(true);
+                }}
+              >
+                <Image
+                  src={image.src}
+                  alt={`Bergkulla ${image.alt}`}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+            </div>
+          ))}
+        </Slider>
+
+        <div className="thumbnail-scroll-container">
+          <div className="thumbnail-scroll-content">
+            {[...images, ...images].map((image, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 cursor-pointer"
+                onClick={() =>
+                  sliderRef.current?.slickGoTo(index % images.length)
+                }
+              >
+                <div className="relative w-[200px] md:w-[350px] aspect-[2/1]">
                   <Image
                     src={image.src}
-                    alt={`Bergkulla ${image.alt}`}
+                    alt={image.alt}
                     layout="fill"
                     objectFit="cover"
+                    className="transition-opacity"
                   />
                 </div>
               </div>
             ))}
-          </Slider>
-
-          <div className="thumbnail-scroll-container mt-8">
-            <div className="thumbnail-scroll-content">
-              {[...images, ...images].map((image, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 cursor-pointer"
-                  onClick={() =>
-                    sliderRef.current?.slickGoTo(index % images.length)
-                  }
-                >
-                  <div className="relative w-[350px] aspect-[2/1]">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      layout="fill"
-                      objectFit="cover"
-                      className="transition-opacity"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
@@ -106,6 +122,6 @@ export const ImageCarousel = () => {
         index={photoIndex}
         slides={images}
       />
-    </>
+    </div>
   );
 };

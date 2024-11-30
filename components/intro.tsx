@@ -6,12 +6,12 @@ export const Intro = () => {
     <div className="w-full">
       <WaveDivider fill="#E5E9EB" />
       <section className="bg-[#E5E9EB] py-12 md:py-24 lg:py-40">
-        <div className="container mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-          <div className="space-y-12">
-            <h2 className="text-4xl lg:text-5xl font-serif tracking-tight text-[#2C3539]">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+          <div className="space-y-8 lg:space-y-12 px-4 md:px-8">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif tracking-tight text-[#2C3539]">
               BO PÅ BERGKULLA
             </h2>
-            <div className="space-y-8 text-[#4A4A4A] text-lg leading-relaxed">
+            <div className="space-y-6 md:space-y-8 text-[#4A4A4A] text-base md:text-lg leading-relaxed">
               <p>
                 På Bergkulla erbjuder vi ett unikt långtidsboende i hjärtat av
                 den åländska skärgården. Här möts modern komfort och
@@ -29,17 +29,17 @@ export const Intro = () => {
               </p>
             </div>
           </div>
-          <div className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-lg">
+          <div className="relative aspect-[4/3] md:aspect-[16/9] lg:aspect-[3/2] w-full lg:w-[45vw] ml-auto">
             <Image
               src="/images/intro-1.jpg"
               alt="Bergkulla stugor i skärgårdsmiljö"
               fill
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 95vw, 45vw"
               style={{
                 objectFit: "cover",
                 objectPosition: "center",
               }}
-              className="hover:scale-105 transition-transform duration-700"
+              className="hover:scale-[1.02] transition-transform duration-700"
             />
           </div>
         </div>
@@ -48,25 +48,25 @@ export const Intro = () => {
       <WaveDivider rotate fill="#E5E9EB" />
 
       <section className="py-12 md:py-24 lg:py-40">
-        <div className="container mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-          <div className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-lg order-2 lg:order-1">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+          <div className="relative aspect-[4/3] md:aspect-[16/9] lg:aspect-[3/2] w-full lg:w-[45vw] order-1">
             <Image
               src="/images/intro-2.jpg"
               alt="Bergkullas faciliteter"
               fill
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 95vw, 45vw"
               style={{
                 objectFit: "cover",
                 objectPosition: "center",
               }}
-              className="hover:scale-105 transition-transform duration-700"
+              className="hover:scale-[1.02] transition-transform duration-700"
             />
           </div>
-          <div className="space-y-12 order-1 lg:order-2">
-            <h2 className="text-4xl lg:text-5xl font-serif tracking-tight text-[#2C3539]">
+          <div className="space-y-8 lg:space-y-12 px-4 md:px-8 order-2">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif tracking-tight text-[#2C3539]">
               FACILITETER
             </h2>
-            <div className="space-y-8 text-[#4A4A4A] text-lg leading-relaxed">
+            <div className="space-y-6 md:space-y-8 text-[#4A4A4A] text-base md:text-lg leading-relaxed">
               <p>
                 Som boende på Bergkulla får du tillgång till en rad exklusiva
                 faciliteter som gör din vistelse extra speciell:
@@ -101,12 +101,12 @@ export const Intro = () => {
       <WaveDivider fill="#E5E9EB" />
 
       <section className="bg-[#E5E9EB] py-12 md:py-24 lg:py-40">
-        <div className="container mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-          <div className="space-y-12">
-            <h2 className="text-4xl lg:text-5xl font-serif tracking-tight text-[#2C3539]">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+          <div className="space-y-8 lg:space-y-12 px-4 md:px-8">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif tracking-tight text-[#2C3539]">
               VÅR HISTORIA
             </h2>
-            <div className="space-y-8 text-[#4A4A4A] text-lg leading-relaxed">
+            <div className="space-y-6 md:space-y-8 text-[#4A4A4A] text-base md:text-lg leading-relaxed">
               <p>
                 Bergkulla är en stiftelse som drivits av samma familj i
                 generationer. Vi värnar om att bevara områdets unika karaktär
@@ -125,17 +125,17 @@ export const Intro = () => {
               </p>
             </div>
           </div>
-          <div className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-lg">
+          <div className="relative aspect-[4/3] md:aspect-[16/9] lg:aspect-[3/2] w-full lg:w-[45vw] ml-auto">
             <Image
               src="/images/intro-3.jpg"
               alt="Historiska Bergkulla"
               fill
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 95vw, 45vw"
               style={{
                 objectFit: "cover",
                 objectPosition: "center",
               }}
-              className="hover:scale-105 transition-transform duration-700"
+              className="hover:scale-[1.02] transition-transform duration-700"
             />
           </div>
         </div>
