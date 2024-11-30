@@ -1,19 +1,37 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 export const Hero = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="relative h-screen flex items-center justify-center overflow-hidden">
-      <Image
-        src="/images/hero.jpg"
-        alt="Bergkulla stugby vid havet - Exklusivt långtidsboende på Åland"
-        fill
-        sizes="100vw"
-        style={{ objectFit: "cover" }}
-        quality={100}
-        priority
-        className="absolute z-0"
-      />
+      <div
+        className="absolute inset-0 z-0"
+        style={{ transform: `translateY(${scrollPosition * 0.5}px)` }}
+      >
+        <Image
+          src="/images/hero.jpg"
+          alt="Bergkulla stugby vid havet - Exklusivt långtidsboende på Åland"
+          fill
+          sizes="100vw"
+          style={{ objectFit: "cover" }}
+          quality={100}
+          priority
+        />
+      </div>
       <div className="absolute inset-0 bg-[#2C3539]/40 z-[1]" />
       <div
         className="absolute inset-0 z-[1]"
