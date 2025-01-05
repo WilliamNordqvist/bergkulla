@@ -13,19 +13,18 @@ export const Intro = () => {
             </h2>
             <div className="space-y-6 md:space-y-8 text-[#4A4A4A] text-base md:text-lg leading-relaxed">
               <p>
-                På Bergkulla erbjuder vi ett unikt långtidsboende i hjärtat av
-                den åländska skärgården. Här möts modern komfort och
-                traditionell charm i en tidlös miljö.
+                På Bergkulla erbjuder vi ett unikt fritidshus i hjärtat av den
+                åländska skärgården. Här möts modern komfort och traditionell
+                charm i en tidlös miljö.
               </p>
               <p>
                 Beläget i natursköna Saltvik, endast 30 minuter från Mariehamn,
                 är detta den perfekta platsen för dig som söker ett
-                högkvalitativt boende i harmoni med naturen.
+                högkvalitativt fritidshus i harmoni med naturen.
               </p>
               <p>
-                Våra moderna stugor är designade för långtidsboende (6-12
-                månader) och erbjuder alla bekvämligheter du behöver för en
-                bekväm och inspirerande vistelse i skärgården.
+                Våra moderna stugor erbjuder alla bekvämligheter du behöver för
+                en bekväm och inspirerande vistelse i skärgården.
               </p>
             </div>
           </div>
@@ -73,26 +72,21 @@ export const Intro = () => {
               </p>
               <ul>
                 <li className="flex items-center gap-3 before:content-['•'] before:text-[#E5E5E5] before:text-2xl before:leading-none">
-                  Privat båthus med egen brygga och båt
+                  Tillgång till båthus med egen brygga och båt
                 </li>
                 <li className="flex items-center gap-3 before:content-['•'] before:text-[#E5E5E5] before:text-2xl before:leading-none">
                   Tennisplan för aktiva stunder
                 </li>
                 <li className="flex items-center gap-3 before:content-['•'] before:text-[#E5E5E5] before:text-2xl before:leading-none">
-                  Avkopplande bastu med havsutsikt
+                  Avkopplande vedeldad bastu i båthuset
                 </li>
                 <li className="flex items-center gap-3 before:content-['•'] before:text-[#E5E5E5] before:text-2xl before:leading-none">
                   Höghastighetsnätverk för distansarbete
                 </li>
                 <li className="flex items-center gap-3 before:content-['•'] before:text-[#E5E5E5] before:text-2xl before:leading-none">
-                  Omgivande vandringsleder och naturområden
+                  Ålands stora utbud av fritidsaktiviteter
                 </li>
               </ul>
-              <p>
-                Alla dessa faciliteter är noggrant utvalda för att förhöja din
-                upplevelse och göra din tid på Bergkulla så bekväm och njutbar
-                som möjligt.
-              </p>
             </div>
           </div>
         </div>
@@ -110,13 +104,13 @@ export const Intro = () => {
               <p>
                 Bergkulla är en stiftelse som drivits av samma familj i
                 generationer. Vi värnar om att bevara områdets unika karaktär
-                och naturvärden, samtidigt som vi erbjuder modern komfort för
-                våra boende.
+                och naturvärden, samtidigt som vi erbjuder modern komfort i våra
+                stugor.
               </p>
               <p>
                 Här skapar vi en perfekt balans mellan tradition och nutid, där
-                långtidsboende kan njuta av både lugnet i skärgården och
-                bekvämligheten av moderna faciliteter.
+                du kan njuta av både lugnet i skärgården och bekvämligheten av
+                moderna faciliteter.
               </p>
               <p>
                 Vår passion för att dela denna unika plats med andra har drivit

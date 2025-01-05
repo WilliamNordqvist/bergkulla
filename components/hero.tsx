@@ -46,7 +46,7 @@ export const Hero = () => {
           Välkommen till Bergkulla på Åland
         </h1>
         <p className="text-lg md:text-xl mb-8 [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">
-          Moderna stugor för långtidsboende från 550€/månad
+          Moderna stugor från 550€ per månad
         </p>
         <a href="mailto:niclas@bergkulla.ax">
           <Button className="bg-[#FAF9F6] text-[#2C3539] hover:bg-[#F5F5F0] text-lg px-8 py-3">
