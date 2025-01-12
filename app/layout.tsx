@@ -146,6 +146,7 @@ export const metadata: Metadata = {
     "havsutsikt åland",
     "båthus åland",
     "tennisplan åland",
+    "hyra fritidshus",
   ],
   authors: [{ name: "Bergkullastiftelsen", url: "https://bergkulla.ax" }],
   creator: "Bergkullastiftelsen",
