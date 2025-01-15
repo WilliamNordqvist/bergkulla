@@ -10,8 +10,7 @@ const config: Config = {
   theme: {
   	extend: {
   		screens: {
-  			'xs': '480px',
-  			// ... andra screens
+  			xs: '480px'
   		},
   		colors: {
   			background: 'hsl(var(--background))',
