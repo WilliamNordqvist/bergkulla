@@ -70,7 +70,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="pt-6 mx-auto max-w-2xl">
+    <div className="pt-6 p-4 mx-auto max-w-2xl">
       <Link
         href="/"
         className="pb-6 cursor-pointer text-gray-600 hover:text-gray-900 transition-colors flex items-center gap-2"
