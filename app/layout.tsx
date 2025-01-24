@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
-import { ClarityScript } from "@/components/clarity-script";
+import { HotjarScript } from "@/components/hotjar-script";
 // import { GoogleAnalytics } from "@/components/google-analytics";
 
 const geistSans = localFont({
@@ -268,7 +268,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#FAF9F6]`}
       >
-        <ClarityScript />
+        <HotjarScript />
         {/* <GoogleAnalytics /> */}
         <JsonLd />
         <Analytics />
