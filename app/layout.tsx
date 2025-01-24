@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { ClarityScript } from "@/components/clarity-script";
-import { GoogleAnalytics } from "@/components/google-analytics";
+// import { GoogleAnalytics } from "@/components/google-analytics";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -269,7 +269,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#FAF9F6]`}
       >
         <ClarityScript />
-        <GoogleAnalytics />
+        {/* <GoogleAnalytics /> */}
         <JsonLd />
         <Analytics />
 
