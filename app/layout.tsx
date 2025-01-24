@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import { ClarityScript } from "@/components/clarity-script";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -229,6 +230,10 @@ export default function RootLayout({
         />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#040B1C" />
+        <meta
+          name="google-site-verification"
+          content="rdWY0ceF7irJ67h8wf3RnRb2mWlchnWtlhaLtAsttJo"
+        />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -262,6 +267,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#FAF9F6]`}
       >
+        <ClarityScript />
         <JsonLd />
         <Analytics />
 

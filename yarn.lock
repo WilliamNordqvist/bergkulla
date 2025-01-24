@@ -2355,6 +2355,11 @@ react-is@^16.13.1:
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-microsoft-clarity@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-microsoft-clarity/-/react-microsoft-clarity-2.0.0.tgz#902d2a05139b9f42d0a1a6963d2c83ef085866ad"
+  integrity sha512-Hnbmiv+/vHSekS+Diho7SzvigNLNm+wayZMhxS4otaxPBlN3ccpY7k+PJd2Ytg3F6umU3JZzFtLzvK1WmfdhpA==
+
 react-promise-suspense@0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/react-promise-suspense/-/react-promise-suspense-0.3.4.tgz#05d19a75703d71374674840056cfef2fcd38809d"
