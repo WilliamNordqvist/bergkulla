@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { WaveDivider } from "@/components/ui/wave-divider";
+import Link from "next/link";
 
 export const Intro = () => {
   return (
@@ -132,6 +133,28 @@ export const Intro = () => {
               className="hover:scale-[1.02] transition-transform duration-700"
             />
           </div>
+        </div>
+      </section>
+
+      <WaveDivider rotate fill="#E5E9EB" />
+
+      <section className="py-52 text-center">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif tracking-tight text-[#2C3539] mb-6">
+            BOKA DIN VISTELSE
+          </h2>
+          <p className="text-[#4A4A4A] text-lg">
+            Är du intresserad av att hyra ett fritidshus i den åländska
+            skärgården? Kontakta oss om du vill boka eller om du har några
+            frågor om våra stugor och möjligheterna till långtidsboende på
+            Bergkulla.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block bg-[#2C3539] text-white px-8 py-4 rounded-md text-lg font-medium mt-8"
+          >
+            Boka idag
+          </Link>
         </div>
       </section>
     </div>
