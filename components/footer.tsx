@@ -26,7 +26,8 @@ export const Footer = () => {
           <div className="space-y-6">
             <div className="space-y-2">
               <p className="text-xl text-white">
-                Hyrorna är från 550€ per månad
+                Hyrorna är från 4.900€ per säsong (1 april-31 oktober) eller
+                6.600€ per år
               </p>
               <p className="text-gray-300">Endast elförbrukning tillkommer</p>
             </div>

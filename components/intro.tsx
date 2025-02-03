@@ -25,7 +25,8 @@ export const Intro = () => {
               </p>
               <p>
                 Våra moderna stugor erbjuder alla bekvämligheter du behöver för
-                en bekväm och inspirerande vistelse i skärgården.
+                en bekväm och inspirerande vistelse i skärgården, långt från
+                storstadens intensiva brus.
               </p>
             </div>
           </div>
@@ -146,8 +147,7 @@ export const Intro = () => {
           <p className="text-[#4A4A4A] text-lg">
             Är du intresserad av att hyra ett fritidshus i den åländska
             skärgården? Kontakta oss om du vill boka eller om du har några
-            frågor om våra stugor och möjligheterna till långtidsboende på
-            Bergkulla.
+            frågor om våra stugor på Bergkulla.
           </p>
           <Link
             href="/contact"
