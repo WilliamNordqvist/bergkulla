@@ -39,7 +39,7 @@ export const LastHouseSection = () => {
             <div>
               <Link href="/contact">
                 <Button className="bg-[#2C3539] text-white hover:bg-[#1A2326] text-lg px-8 py-3 w-full md:w-auto">
-                  Boka nu - innan det är för sent!
+                  Boka nu!
                 </Button>
               </Link>
             </div>

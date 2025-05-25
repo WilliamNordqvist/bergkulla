@@ -17,6 +17,17 @@ body {
     animation: scroll-x 600s linear infinite;
   }
 
+  .animate-banner-scroll {
+    display: inline-flex;
+    animation: marquee 200s linear infinite;
+  }
+
+  @media (max-width: 768px) {
+    .animate-banner-scroll {
+      animation: marquee 120s linear infinite;
+    }
+  }
+
   .pause {
     animation-play-state: paused;
   }
@@ -27,6 +38,15 @@ body {
     }
     100% {
       transform: translateX(-50%);
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-100%, 0);
     }
   }
 }
