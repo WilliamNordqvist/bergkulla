@@ -2,7 +2,7 @@
 
 export const RollingBanner = () => {
   const text =
-    "🏠 För säsongen 2025 har vi endast 1 hus kvar. Läs mer nedan för att boka.";
+    "Återbud! Bergkulla 2 är tillgänglig för att hyra. 2 sovrum plus sovloft, öppen och luftig planlösning. Läs mer nedan för att boka!";
 
   // Create enough repetitions for smooth scrolling
   const repetitions = 20;

@@ -19,12 +19,12 @@ body {
 
   .animate-banner-scroll {
     display: inline-flex;
-    animation: marquee 200s linear infinite;
+    animation: marquee 400s linear infinite;
   }
 
   @media (max-width: 768px) {
     .animate-banner-scroll {
-      animation: marquee 120s linear infinite;
+      animation: marquee 280s linear infinite;
     }
   }
 
