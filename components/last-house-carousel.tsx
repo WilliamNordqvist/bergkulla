@@ -17,18 +17,75 @@ export const LastHouseCarousel = () => {
   const [photoIndex, setPhotoIndex] = useState(0);
 
   useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const response = await fetch("/api/last-house-images");
-        if (!response.ok) throw new Error("Failed to fetch images");
-        const data = await response.json();
-        setImages(data);
-      } catch (error) {
-        console.error("Error fetching last house images:", error);
-      }
-    };
+    // Hardcoded images in the specific order we want
+    const hardcodedImages = [
+      // Landscape images first
 
-    fetchImages();
+      {
+        src: "/images/20250806/465928025_10161200434442862_5048441498901960528_n.jpg",
+        alt: "Landscape Image 3",
+      },
+      {
+        src: "/images/20250806/465957100_10161200433972862_5546276504253604520_n.jpg",
+        alt: "Landscape Image 4",
+      },
+      {
+        src: "/images/20250806/466151323_10161200433912862_5993076632139172079_n.jpg",
+        alt: "Landscape Image 5",
+      },
+
+      {
+        src: "/images/20250806/465888200_10161200435082862_387405001759929354_n.jpg",
+        alt: "Landscape Image 2",
+      },
+
+      {
+        src: "/images/20250806/466352498_10161200433992862_7440491487064711861_n.jpg",
+        alt: "Landscape Image 7",
+      },
+      {
+        src: "/images/20250806/465867563_10161200434737862_1664742391975264650_n.jpg",
+        alt: "Portrait Image 1",
+      },
+      {
+        src: "/images/20250806/465868448_10161200434457862_3844420423657681454_n.jpg",
+        alt: "Portrait Image 2",
+      },
+
+      {
+        src: "/images/20250806/466155986_10161200433997862_6004136538838099546_n.jpg",
+        alt: "Landscape Image 6",
+      },
+
+      {
+        src: "/images/20250806/465716327_10161200433907862_7298125129798330937_n.jpg",
+        alt: "Landscape Image 1",
+      },
+
+      // Floor plans last
+      {
+        src: "/images/20250806/Ritning_page-0001.jpg",
+        alt: "Floor Plan 1",
+      },
+      {
+        src: "/images/20250806/Ritning_page-0002.jpg",
+        alt: "Floor Plan 2",
+      },
+      {
+        src: "/images/20250806/Ritning_page-0003.jpg",
+        alt: "Floor Plan 3",
+      },
+      {
+        src: "/images/20250806/Ritning_page-0004.jpg",
+        alt: "Floor Plan 4",
+      },
+      {
+        src: "/images/20250806/Ritning_page-0005.jpg",
+        alt: "Floor Plan 5",
+      },
+    ];
+
+    setImages(hardcodedImages);
   }, []);
 
   const settings: Settings = {
@@ -52,7 +109,7 @@ export const LastHouseCarousel = () => {
         {images.map((image, index) => (
           <div key={index}>
             <div
-              className="relative aspect-[3/2] cursor-pointer"
+              className="relative aspect-[4/3] cursor-pointer "
               onClick={() => {
                 setPhotoIndex(index);
                 setIsOpen(true);
@@ -60,10 +117,10 @@ export const LastHouseCarousel = () => {
             >
               <Image
                 src={image.src}
-                alt={`Sista lediga huset - ${image.alt}`}
+                alt={`Bergkulla 2 - ${image.alt}`}
                 fill
                 sizes="(max-width: 768px) 95vw, 672px"
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "contain" }}
                 className="rounded-lg"
               />
             </div>
