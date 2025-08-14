@@ -50,7 +50,7 @@ export const Hero = () => {
             Välkommen till Bergkulla på Åland
           </h1>
           <p className="text-lg md:text-xl mb-8 [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">
-            Moderna stugor från 4.900€ per säsong eller 6.600€ per år
+            Moderna stugor 10.800€ per år
           </p>
           <Link href="/contact">
             <Button className="bg-[#FAF9F6] text-[#2C3539] hover:bg-[#F5F5F0] text-lg px-8 py-3">

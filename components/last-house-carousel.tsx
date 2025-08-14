@@ -97,6 +97,14 @@ export const LastHouseCarousel = () => {
     autoplay: true,
     autoplaySpeed: 2500,
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          dots: false,
+        },
+      },
+    ],
   };
 
   if (images.length === 0) {
