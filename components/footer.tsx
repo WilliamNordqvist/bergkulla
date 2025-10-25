@@ -2,7 +2,7 @@ export const Footer = () => {
   return (
     <footer className="p-10 bg-[#040B1C] md:p-16">
       <div className="mx-auto max-w-screen-xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-20 lg:gap-32 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 lg:gap-32 mb-12">
           <div className="space-y-6">
             <a href="#" className="inline-block">
               <h2 className="text-2xl font-serif text-white">
@@ -15,26 +15,11 @@ export const Footer = () => {
                 <p>AX-22430 Saltvik, Åland</p>
               </div>
               <a
-                href="mailto:niclas@bergkulla.ax"
+                href="mailto:styrelsen@bergkulla.ax"
                 className="text-white hover:underline block transition-all"
               >
-                niclas@bergkulla.ax
+                styrelsen@bergkulla.ax
               </a>
-            </div>
-          </div>
-
-          <div className="space-y-6">
-            <div className="space-y-2">
-              <p className="text-xl text-white">Hyrorna är 10.800€ per år</p>
-              <p className="text-gray-300">Endast elförbrukning tillkommer</p>
-            </div>
-
-            <div className="space-y-2">
-              <p className="text-lg text-white">Intresserad av långtidshyra?</p>
-              <p className="text-gray-300">
-                Kontakta oss för mer information om lediga stugor och
-                uthyrningsvillkor.
-              </p>
             </div>
           </div>
 
