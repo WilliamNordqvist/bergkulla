@@ -4,21 +4,31 @@ import { StiftelsenNavbar } from "@/components/stiftelsen/navbar";
 import { OmStiftelsenSection, VideoSection } from "@/components/stiftelsen/om-stiftelsen";
 import { StipendierSection } from "@/components/stiftelsen/stipendier-section";
 import { WaveDivider } from "@/components/ui/wave-divider";
+import { getFooterData, getStiftelsenData } from "@/lib/sanity-queries";
 
-export default function StiftelsenPage() {
+export default async function StiftelsenPage() {
+  const [stiftelsenData, footerData] = await Promise.all([
+    getStiftelsenData(),
+    getFooterData(),
+  ]);
+
+  if (!stiftelsenData || !footerData) {
+    return <div>Laddar innehåll från Sanity...</div>;
+  }
+
   return (
     <div className="bg-white text-gray-800">
-      <StiftelsenNavbar />
+      <StiftelsenNavbar links={stiftelsenData.navigation.links} />
       <main>
-        <OmStiftelsenSection />
+        <OmStiftelsenSection data={stiftelsenData.omStiftelsen} />
         <WaveDivider rotate fill="#E5E9EB" />
-        <EkonomiSection />
+        <EkonomiSection data={stiftelsenData.ekonomi} />
         <WaveDivider fill="#E5E9EB" />
-        <StipendierSection />
+        <StipendierSection data={stiftelsenData.stipendier} />
         <WaveDivider rotate fill="#E5E9EB" />
-        <VideoSection />
+        <VideoSection data={stiftelsenData.videos} />
       </main>
-      <Footer />
+      <Footer data={footerData} />
     </div>
   );
 }

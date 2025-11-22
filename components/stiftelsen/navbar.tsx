@@ -4,14 +4,14 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-const navLinks = [
-  { href: "#om-stiftelsen", label: "Om Stiftelsen" },
-  { href: "#bergkullaby", label: "Bergkullaby" },
-  { href: "#ekonomi", label: "Ekonomi" },
-  { href: "#stipendier", label: "Stipendier" },
-];
+interface StiftelsenNavbarProps {
+  links: Array<{
+    href: string;
+    label: string;
+  }>;
+}
 
-export const StiftelsenNavbar = () => {
+export const StiftelsenNavbar = ({ links }: StiftelsenNavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export const StiftelsenNavbar = () => {
     >
       <div className="container mx-auto flex items-center justify-center h-16">
         <div className="flex flex-wrap justify-center space-x-4 md:space-x-8">
-          {navLinks.map((link) => (
+          {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}

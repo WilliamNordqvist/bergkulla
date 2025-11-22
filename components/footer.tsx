@@ -1,4 +1,15 @@
-export const Footer = () => {
+interface FooterProps {
+  data: {
+    companyName: string;
+    addressLine1: string;
+    addressLine2: string;
+    email: string;
+    googleMapsEmbedUrl: string;
+    copyrightText: string;
+  };
+}
+
+export const Footer = ({ data }: FooterProps) => {
   return (
     <footer className="p-10 bg-[#040B1C] md:p-16">
       <div className="mx-auto max-w-screen-xl">
@@ -6,26 +17,26 @@ export const Footer = () => {
           <div className="space-y-6">
             <a href="#" className="inline-block">
               <h2 className="text-2xl font-serif text-white">
-                Bergkullastiftelsen
+                {data.companyName}
               </h2>
             </a>
             <div className="space-y-2">
               <div className="text-gray-300">
-                <p>Hamnsundsvägen 523, Bertbyvik</p>
-                <p>AX-22430 Saltvik, Åland</p>
+                <p>{data.addressLine1}</p>
+                <p>{data.addressLine2}</p>
               </div>
               <a
-                href="mailto:styrelsen@bergkulla.ax"
+                href={`mailto:${data.email}`}
                 className="text-white hover:underline block transition-all"
               >
-                styrelsen@bergkulla.ax
+                {data.email}
               </a>
             </div>
           </div>
 
           <div className="h-[200px] rounded-lg overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1968.2847472006456!2d20.090654315655517!3d60.34333045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468aedf99b34d645%3A0x1cef5cf6d99d381e!2sBergkula%20Stiftelse!5e0!3m2!1ssv!2sfi!4v1708701234567!5m2!1ssv!2sfi"
+              src={data.googleMapsEmbedUrl}
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -40,9 +51,9 @@ export const Footer = () => {
           <span className="text-sm text-gray-500">
             © {new Date().getFullYear()}{" "}
             <a href="#" className="hover:text-white transition-colors">
-              Bergkullastiftelsen
+              {data.companyName}
             </a>
-            . Alla rättigheter förbehållna.
+            . {data.copyrightText}
           </span>
         </div>
       </div>

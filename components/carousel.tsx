@@ -1,38 +1,38 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Slider, { Settings } from "react-slick";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { urlFor } from "@/sanity/lib/image";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 type ImageType = {
   src: string;
   alt: string;
 };
 
-export const ImageCarousel = () => {
-  const [images, setImages] = useState<ImageType[]>([]);
+interface ImageCarouselProps {
+  title: string;
+  images: Array<{
+    image: SanityImageSource;
+    alt: string;
+  }>;
+}
+
+export const ImageCarousel = ({ title, images: sanityImages }: ImageCarouselProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   const sliderRef = React.useRef<Slider>(null);
 
-  useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const response = await fetch("/api/carousel-images");
-        if (!response.ok) throw new Error("Failed to fetch images");
-        const data = await response.json();
-        setImages(data);
-      } catch (error) {
-        console.error("Error fetching carousel images:", error);
-      }
-    };
-
-    fetchImages();
-  }, []);
+  // Convert Sanity images to the format expected by the component
+  const images: ImageType[] = sanityImages.map(img => ({
+    src: urlFor(img.image).url(),
+    alt: img.alt,
+  }));
 
   const settings: Settings = {
     lazyLoad: "ondemand",
@@ -65,7 +65,7 @@ export const ImageCarousel = () => {
     <div className="py-20 md:py-32 lg:py-40 overflow-hidden">
       <div className="text-center mb-8 md:mb-16">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif tracking-tight text-[#2C3539]">
-          UPPTÄCK BERGKULLA
+          {title}
         </h2>
       </div>
 

@@ -1,9 +1,10 @@
 "use client";
 
-export const RollingBanner = () => {
-  const text =
-    "Återbud! Bergkulla 2 är tillgänglig för att hyra. 2 sovrum plus sovloft, öppen och luftig planlösning. Läs mer nedan för att boka!";
+interface RollingBannerProps {
+  text: string;
+}
 
+export const RollingBanner = ({ text }: RollingBannerProps) => {
   // Create enough repetitions for smooth scrolling
   const repetitions = 20;
 

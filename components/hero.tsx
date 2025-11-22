@@ -5,8 +5,24 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { RollingBanner } from "@/components/rolling-banner";
+import { urlFor } from "@/sanity/lib/image";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
-export const Hero = () => {
+interface HeroProps {
+  data: {
+    title: string;
+    subtitle: string;
+    buttonText: string;
+    buttonLink: string;
+    image: SanityImageSource;
+  };
+  banner?: {
+    enabled: boolean;
+    text: string;
+  };
+}
+
+export const Hero = ({ data, banner }: HeroProps) => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
@@ -20,15 +36,15 @@ export const Hero = () => {
 
   return (
     <>
-      <RollingBanner />
+      {banner?.enabled && <RollingBanner text={banner.text} />}
       <div className="relative h-screen flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 z-0"
           style={{ transform: `translateY(${scrollPosition * 0.5}px)` }}
         >
           <Image
-            src="/images/hero.jpg"
-            alt="Bergkulla stugby vid havet - Exklusivt långtidsboende på Åland"
+            src={urlFor(data.image).url()}
+            alt={data.title}
             fill
             sizes="100vw"
             style={{ objectFit: "cover" }}
@@ -47,14 +63,14 @@ export const Hero = () => {
 
         <div className="relative z-10 text-center text-white p-6 max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 [text-shadow:0_2px_5px_rgba(0,0,0,0.5)]">
-            Välkommen till Bergkulla på Åland
+            {data.title}
           </h1>
           <p className="text-lg md:text-xl mb-8 [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">
-            Moderna stugor 10.800€ per år
+            {data.subtitle}
           </p>
-          <Link href="/contact">
+          <Link href={data.buttonLink}>
             <Button className="bg-[#FAF9F6] text-[#2C3539] hover:bg-[#F5F5F0] text-lg px-8 py-3">
-              Kontakta oss
+              {data.buttonText}
             </Button>
           </Link>
         </div>
