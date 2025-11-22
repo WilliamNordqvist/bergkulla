@@ -1,6 +1,9 @@
 import { SplitScreenHero } from "@/components/split-screen-hero";
 import { client } from "@/sanity/lib/client";
 
+// Revalidate every 10 seconds during development
+export const revalidate = 10;
+
 async function getHeroData() {
   try {
     const data = await client.fetch(
