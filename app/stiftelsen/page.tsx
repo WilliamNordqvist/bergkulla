@@ -6,6 +6,9 @@ import { StipendierSection } from "@/components/stiftelsen/stipendier-section";
 import { WaveDivider } from "@/components/ui/wave-divider";
 import { getFooterData, getStiftelsenData } from "@/lib/sanity-queries";
 
+// Revalidate every 10 seconds during development
+export const revalidate = 10;
+
 export default async function StiftelsenPage() {
   const [stiftelsenData, footerData] = await Promise.all([
     getStiftelsenData(),

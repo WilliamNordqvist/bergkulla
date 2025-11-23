@@ -6,6 +6,9 @@ import { LastHouseSection } from "@/components/last-house-section";
 import { client } from "@/sanity/lib/client";
 import { getFooterData } from "@/lib/sanity-queries";
 
+// Revalidate every 10 seconds during development
+export const revalidate = 10;
+
 async function getBergkullaData() {
   const data = await client.fetch(
     `*[_type == "bergkullasida"][0]{
