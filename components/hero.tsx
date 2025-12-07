@@ -69,7 +69,7 @@ export const Hero = ({ data, banner }: HeroProps) => {
             {data.subtitle}
           </p>
           <Link href={data.buttonLink}>
-            <Button className="bg-[#FAF9F6] text-[#2C3539] hover:bg-[#F5F5F0] text-lg px-8 py-3">
+            <Button className="bg-[#FAF9F6] text-[#2C3539] hover:bg-[#F5F5F0] text-lg px-6 py-3 h-auto whitespace-normal text-center max-w-[90vw] md:px-8 md:max-w-none">
               {data.buttonText}
             </Button>
           </Link>
