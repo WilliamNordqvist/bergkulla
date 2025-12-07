@@ -34,15 +34,7 @@ export const StipendierSection = ({ data }: StipendierSectionProps) => {
             {data.title}
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Stipendier kan sökas genom att maila till{" "}
-            <a
-              href={`mailto:${data.contactEmail}`}
-              className="text-blue-600 hover:underline font-semibold"
-            >
-              {data.contactEmail}
-            </a>
-            . Nedan listas de stipendier och miljöinvesteringar som stiftelsen
-            har delat ut genom åren.
+            {data.description}
           </p>
         </div>
         <div className="mt-16 max-w-3xl mx-auto">

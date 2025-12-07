@@ -8,7 +8,9 @@ export async function getFooterData() {
       addressLine2,
       googleMapsEmbedUrl,
       copyrightText
-    }`
+    }`,
+    {},
+    { next: { revalidate: 0 } }
   );
   return data;
 }
@@ -21,7 +23,9 @@ export async function getStiftelsenData() {
       stipendier,
       videos,
       navigation
-    }`
+    }`,
+    {},
+    { next: { revalidate: 0 } }
   );
   return data;
 }
