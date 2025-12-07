@@ -1,6 +1,5 @@
 import { Footer } from "@/components/footer";
 import { EkonomiSection } from "@/components/stiftelsen/ekonomi-section";
-import { StiftelsenNavbar } from "@/components/stiftelsen/navbar";
 import { OmStiftelsenSection, VideoSection } from "@/components/stiftelsen/om-stiftelsen";
 import { StipendierSection } from "@/components/stiftelsen/stipendier-section";
 import { WaveDivider } from "@/components/ui/wave-divider";
@@ -21,7 +20,6 @@ export default async function StiftelsenPage() {
 
   return (
     <div className="bg-white text-gray-800">
-      <StiftelsenNavbar links={stiftelsenData.navigation?.links ?? []} />
       <main>
         <OmStiftelsenSection data={stiftelsenData.omStiftelsen} />
         <WaveDivider rotate fill="#E5E9EB" />
