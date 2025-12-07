@@ -63,7 +63,7 @@ export const Intro = ({ sections, ctaSection }: IntroProps) => {
         <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           <div className="relative aspect-[4/3] md:aspect-[16/9] lg:aspect-[3/2] w-full lg:w-[45vw] order-last lg:order-first">
             <Image
-              src={urlFor(sections[1].image).url()}
+              src={urlFor(sections[1].image).width(1200).quality(90).url()}
               alt={sections[1].imageAlt}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 95vw, 45vw"

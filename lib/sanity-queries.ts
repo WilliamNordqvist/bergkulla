@@ -6,7 +6,6 @@ export async function getFooterData() {
       companyName,
       addressLine1,
       addressLine2,
-      email,
       googleMapsEmbedUrl,
       copyrightText
     }`

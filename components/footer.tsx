@@ -3,7 +3,6 @@ interface FooterProps {
     companyName: string;
     addressLine1: string;
     addressLine2: string;
-    email: string;
     googleMapsEmbedUrl: string;
     copyrightText: string;
   };
@@ -25,12 +24,6 @@ export const Footer = ({ data }: FooterProps) => {
                 <p>{data.addressLine1}</p>
                 <p>{data.addressLine2}</p>
               </div>
-              <a
-                href={`mailto:${data.email}`}
-                className="text-white hover:underline block transition-all"
-              >
-                {data.email}
-              </a>
             </div>
           </div>
 
