@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     siteName: "Bergkulla",
     locale: "sv_SE",
     type: "website",
+    images: [
+      {
+        url: "/images/hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Bergkulla - Stuguthyrning och stiftelse på Åland",
+      },
+    ],
   },
   alternates: {
     canonical: "https://bergkulla.ax",
