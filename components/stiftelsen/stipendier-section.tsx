@@ -18,45 +18,63 @@ interface StipendierSectionProps {
 }
 
 export const StipendierSection = ({ data }: StipendierSectionProps) => {
-    return (
-      <section id="stipendier" className="py-24 sm:py-32 bg-[#E5E9EB]">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              {data.title}
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-                Stipendier kan sökas genom att maila till{" "}
-                <a href={`mailto:${data.contactEmail}`} className="text-blue-600 hover:underline font-semibold">
-                    {data.contactEmail}
-                </a>
-                . Nedan listas de stipendier och miljöinvesteringar som stiftelsen har delat ut genom åren.
-            </p>
-          </div>
-          <div className="mt-16 max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="w-full">
-              {data.stipendiumData.map((entry) => (
-                <AccordionItem value={entry.year} key={entry.year} className="border-b border-gray-300">
-                  <AccordionTrigger className="text-xl font-semibold py-6 px-4 rounded-lg transition-colors">
-                    <span className="flex items-center gap-3">
-                      <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-900 text-white text-2xl">
-                        📅
-                      </span>
+  const getPreviewText = (items: string[]) => {
+    const fullText = items.join(", ");
+    if (fullText.length > 100) {
+      return fullText.substring(0, 100) + "...";
+    }
+    return fullText;
+  };
+
+  return (
+    <section id="stipendier" className="py-24 sm:py-32 bg-[#E5E9EB]">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            {data.title}
+          </h2>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            Stipendier kan sökas genom att maila till{" "}
+            <a
+              href={`mailto:${data.contactEmail}`}
+              className="text-blue-600 hover:underline font-semibold"
+            >
+              {data.contactEmail}
+            </a>
+            . Nedan listas de stipendier och miljöinvesteringar som stiftelsen
+            har delat ut genom åren.
+          </p>
+        </div>
+        <div className="mt-16 max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            {data.stipendiumData.map((entry) => (
+              <AccordionItem
+                value={entry.year}
+                key={entry.year}
+                className="border border-gray-300 rounded-lg bg-white overflow-hidden"
+              >
+                <AccordionTrigger className="px-6 py-5 hover:no-underline hover:bg-gray-50 transition-colors">
+                  <div className="flex flex-col items-start text-left w-full pr-4">
+                    <span className="text-lg font-semibold text-gray-900">
                       {entry.year}
                     </span>
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    <ul className="list-disc pl-6 space-y-4 text-base text-gray-600 mt-4 px-4">
-                      {entry.items.map((item, index) => (
-                        <li key={index}>{item}</li>
-                      ))}
-                    </ul>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
+                    <span className="text-sm text-gray-500 mt-1 line-clamp-2">
+                      {getPreviewText(entry.items)}
+                    </span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-5 pt-0">
+                  <ul className="list-disc pl-5 space-y-3 text-base text-gray-600">
+                    {entry.items.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
-      </section>
-    );
-  };
+      </div>
+    </section>
+  );
+};

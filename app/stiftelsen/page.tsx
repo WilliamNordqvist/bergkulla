@@ -21,7 +21,7 @@ export default async function StiftelsenPage() {
 
   return (
     <div className="bg-white text-gray-800">
-      <StiftelsenNavbar links={stiftelsenData.navigation.links} />
+      <StiftelsenNavbar links={stiftelsenData.navigation?.links ?? []} />
       <main>
         <OmStiftelsenSection data={stiftelsenData.omStiftelsen} />
         <WaveDivider rotate fill="#E5E9EB" />

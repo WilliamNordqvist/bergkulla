@@ -49,11 +49,7 @@ export const Footer = ({ data }: FooterProps) => {
 
         <div className="pt-8 border-t border-gray-800">
           <span className="text-sm text-gray-500">
-            © {new Date().getFullYear()}{" "}
-            <a href="#" className="hover:text-white transition-colors">
-              {data.companyName}
-            </a>
-            . {data.copyrightText}
+            © {new Date().getFullYear()} {data.copyrightText}
           </span>
         </div>
       </div>
