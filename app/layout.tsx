@@ -129,27 +129,11 @@ function JsonLd() {
 export const metadata: Metadata = {
   metadataBase: new URL("https://bergkulla.ax"),
   title: {
-    default:
-      "Bergkulla - Exklusivt Långtidsboende på Åland | Moderna stugor från 550€/månad",
-    template: "%s | Bergkulla Stiftelse",
+    default: "Bergkulla - Stuguthyrning & Stiftelse på Åland",
+    template: "%s | Bergkulla",
   },
   description:
-    "Upptäck moderna stugor för långtidsboende på Bergkulla, Åland. Fullt utrustade stugor med havsutsikt, privat båthus, tennisplan och bastu. Från endast 550€/månad, perfekt för distansarbete i skärgårdsmiljö.",
-  keywords: [
-    "långtidsboende åland",
-    "stugor åland",
-    "bergkulla stiftelse",
-    "saltvik åland",
-    "boende åland",
-    "uthyrning åland",
-    "skärgårdsboende",
-    "moderna stugor",
-    "distansarbete åland",
-    "havsutsikt åland",
-    "båthus åland",
-    "tennisplan åland",
-    "hyra fritidshus",
-  ],
+    "Bergkulla erbjuder långtidsboende i moderna stugor och driver en stiftelse som stödjer miljöprojekt på Åland.",
   authors: [{ name: "Bergkullastiftelsen", url: "https://bergkulla.ax" }],
   creator: "Bergkullastiftelsen",
   publisher: "Bergkullastiftelsen",
@@ -157,30 +141,6 @@ export const metadata: Metadata = {
     email: false,
     address: false,
     telephone: false,
-  },
-  openGraph: {
-    title: "Bergkulla - Exklusivt Långtidsboende på Åland",
-    description:
-      "Moderna stugor för långtidsboende i åländska skärgården. Fullt utrustade med havsutsikt, privat båthus, tennisplan och bastu. Från 550€/månad.",
-    url: "https://bergkulla.ax",
-    siteName: "Bergkulla Stiftelse",
-    locale: "sv_SE",
-    type: "website",
-    images: [
-      {
-        url: "/images/hero.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Bergkulla stugor i skärgårdsmiljö - Havsutsikt och modern komfort",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Bergkulla - Långtidsboende på Åland",
-    description:
-      "Moderna stugor för långtidsboende i åländska skärgården. Från 550€/månad.",
-    images: ["/images/hero.jpg"],
   },
   robots: {
     index: true,
@@ -193,15 +153,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: "https://bergkulla.ax",
-  },
   viewport: {
     width: "device-width",
     initialScale: 1,
     maximumScale: 5,
   },
-  category: "bostäder",
 };
 
 export default function RootLayout({

@@ -1,5 +1,24 @@
 import { SplitScreenHero } from "@/components/split-screen-hero";
 import { client } from "@/sanity/lib/client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Bergkulla - Stuguthyrning & Stiftelse på Åland",
+  description:
+    "Välkommen till Bergkulla på Åland. Vi erbjuder långtidsboende i moderna stugor och driver en stiftelse som stödjer miljö- och naturvårdsprojekt.",
+  openGraph: {
+    title: "Bergkulla - Stuguthyrning & Stiftelse på Åland",
+    description:
+      "Välkommen till Bergkulla på Åland. Stuguthyrning och stiftelse.",
+    url: "https://bergkulla.ax",
+    siteName: "Bergkulla",
+    locale: "sv_SE",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://bergkulla.ax",
+  },
+};
 
 // Revalidate every 10 seconds during development
 export const revalidate = 10;
