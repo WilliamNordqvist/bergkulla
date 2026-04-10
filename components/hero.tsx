@@ -20,9 +20,10 @@ interface HeroProps {
     enabled: boolean;
     text: string;
   };
+  videoSrc?: string;
 }
 
-export const Hero = ({ data, banner }: HeroProps) => {
+export const Hero = ({ data, banner, videoSrc }: HeroProps) => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
@@ -42,15 +43,27 @@ export const Hero = ({ data, banner }: HeroProps) => {
           className="absolute inset-0 z-0"
           style={{ transform: `translateY(${scrollPosition * 0.5}px)` }}
         >
-          <Image
-            src={urlFor(data.image).url()}
-            alt={data.title}
-            fill
-            sizes="100vw"
-            style={{ objectFit: "cover" }}
-            quality={100}
-            priority
-          />
+          {videoSrc ? (
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src={videoSrc} type="video/mp4" />
+            </video>
+          ) : (
+            <Image
+              src={urlFor(data.image).url()}
+              alt={data.title}
+              fill
+              sizes="100vw"
+              style={{ objectFit: "cover" }}
+              quality={100}
+              priority
+            />
+          )}
         </div>
         <div className="absolute inset-0 bg-[#2C3539]/40 z-[1]" />
         <div

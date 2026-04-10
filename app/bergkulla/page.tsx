@@ -95,7 +95,7 @@ export default async function BergkullaPage() {
 
   return (
     <div className="relative">
-      <Hero data={data.heroSection} banner={data.banner} />
+      <Hero data={data.heroSection} banner={data.banner} videoSrc="/video/heroVideo-compressed.mp4" />
       <LastHouseSection data={data.lastHouseSection} />
       <ImageCarousel title={data.mainGallery.title} images={data.mainGallery.images} />
       <Intro sections={data.introSections} ctaSection={data.ctaSection} />
